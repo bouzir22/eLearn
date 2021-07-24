@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+<a th:href="@{/create}" class="btn btn-success">nouvelle video</a>
+<table class="table table-hover">
+    <thead>
+
+    <tr >
+        <th scope="col">Name</th>
+        <th scope="col">Playlist </th>
+        <th scope="col">Ajouté le</th>
+        <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="v:${videos}">
+
+        <td th:text="${v.name}"></td>
+        <td th:text="${v.playlist}"></td>
+        <td th:text="${v.posted}"></td>
+        <td>
+          <a th:href=" @{'/update/'+${v.id}}" class="btn btn-warning">update</a>
+            <a th:href=" @{'/delete/'+${v.id}}" class="btn btn-danger">delete</a>
+
+
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+<form th:action="@{/upload}" method="post" enctype="multipart/form-data" class="container" th:object="${video}" style="margin-left: 200px;margin-top: 200px">
+    <input type="hidden" name="id" th:field="*{id}">
+    <label>nom video</label>  <input th:field="*{name}" type="text" name="name">
+    <label>playlist</label>  <input th:field="*{playlist}" type="text" name="playlist">
+
+    <div class="d-flex flex-row">
+
+        <div class="p-2"><label>video</label>    <input type="file" name="file"> <br></div>
+        <div class="p-2"><label>iamfe</label> <input type="file" name="img"></div>
+    </div>
+    <button type="submit" class="btn btn-secondary">submit</button>
+
+</form>
+</body>
+</html>
